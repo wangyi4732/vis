@@ -1,0 +1,11 @@
+minio:
+  endpoint: "127.0.0.1:9005"
+  access_key: "admin"
+  secret_key: "admin123456"
+  secure: False
+
+rabbitmq:
+  host: "localhost"
+  port: 5672
+  username: "guest"
+  password: "guest"

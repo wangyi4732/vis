@@ -1,0 +1,59 @@
+# 服务器配置
+server:
+  port: 35251 # 服务器端口
+  servlet:
+    context-path: /api # 应用上下文路径
+
+# spring框架相关配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver # 数据库驱动类名
+    url: jdbc:mysql://http://localhost/yys_aivideo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true # 数据库连接URL
+    username: root # 数据库用户名
+    password: config5566 # 数据库密码
+    type: com.alibaba.druid.pool.DruidDataSource # 数据源类型，这里使用Druid
+  rabbitmq:
+    host: http://localhost # RabbitMQ主机
+    port: 5672 # RabbitMQ端口
+    username: admin # RabbitMQ用户名
+    password: admin123 # RabbitMQ密码
+  elasticsearch:
+    uris: http://localhost # Elasticsearch地址
+    socket-timeout: 30000ms # Socket超时时间
+    connection-timeout: 1000ms # 连接超时时间
+  redis:
+    host: http://localhost/ # Redis主机
+    port: 6379 # Redis端口
+
+minio:
+  url: http://localhost:9000 # MinIO地址
+  accesskey: minioadmin # MinIO访问密钥
+  secretkey: minioadmin # MinIO密钥
+  imgbucket:
+    name: model-img # 图片存储桶名称
+
+# 日志配置
+logging:
+  level:
+    root: INFO # 根日志级别
+    com.yys.util.JwtRequestFilter: DEBUG # JwtRequestFilter日志级别
+
+# MyBatis配置
+mybatis:
+  configuration:
+    map-underscore-to-camel-case : true # 是否开启下划线到驼峰命名的转换
+
+# 自定义配置
+stream:
+  python-url: http://localhost:5000 # Python服务URL
+upload:
+  path: /path # 上传路径
+file:
+  upload-dir: src/main/java/com/yys/zipdata # 文件上传目录
+linuxadress:
+  adress: http://localhost/ # Linux地址
+  port: 22 # Linux端口
+  username: root # Linux用户名
+  password: 123456 # Linux密码
+  upload_dir: /opt # Linux上传目录
+
